@@ -1,16 +1,214 @@
-id="starter-container" div>
-<button id="starter" >"Start Quiz!</button>  
+
+body{
+    bakground-color:;
+    overflow: hidden;
+}
+
+.leaderboard{
+    position: ;
+    bottom: ;
+    top: ;
+    left: ;
+    height: ;
+    width: ;
+    z-index: ;
+    background: ;
+
+}
+
+
+.leaderboard{
+    content: ;
+    position: ;
+    bottom: ;
+    left: ;
+    height: ;
+    width: ;
+    background: ;
+    animation: ;
+
+}
+
+.leaderboard::before{
+    content: ;
+    position: ;
+    bottom: ;
+    left: ;
+    height: ;
+    width: ;
+    background: ;
+    animation: ;
+
+}
+
+@keyframes leaderboardAnimation{
+
+0%{
+    transform:translateX(0);
+}
+100%{
+    transform:translateX(-50%);
+}
+}
+
+.container{
+    max-width: ;
+    margin: ;
+    padding: ;
+    box-sizing: ;
+
+}
 
 
 
-<div id= "questionsContainer" class="hide"
+h1{
+    font-size: ;
+    text-align: center;
+    margin: ;
+    color: ;
+    text-shadow: px px px rgba( , , , );
+}
 
 
-id="scoresContainer" class="hide"
+.button{
+    display: ;
+    background-color: ;
+    color: ;
+    border: ;
+    padding: px px;
+    font-size ;
+    text-align: center;
+    cursor: pointer;
+    border-radius: px;
+}
+
+.button:hover {
+    background-color: ;
+    box-shadow: ;
+    transform: ;
+}
+
+.button:active {
+    background-color: ;
+    box-shadow: ;
+    transform: ;
+}
+
+.quizContainer{
+    background-color: ;
+    padding: ;
+    border-radius: ;
+    margin-bottom: ;
+    box-shadow: ;
+}
+
+.questions{
+    font-size: px;
+    margin-bottom: ;
+    color: ;
+}
+
+/* .choicesList{
+    list-style: ;
+    padding: ;
+    margin: ;
+} */
+
+.choicesList li{
+    margin-bottom: ;
+    padding: ;
+    background-color: ;
+    border-radius: ;
+    cursor: pointer;
+    /* transition: ; */
+}
 
 
-id="initialsContainer" 
+.choicesList li: hover{
+    background-color: ;
+    box-shadow: ;
+    transform: ;
+}
+
+.correctAnswer{
+    /* background-color: ; */
+    /* box-shadow: ; */
+    transform: ;
+}
+
+.hide{
+    display:none;
+}
+
+.resultsContainer{
+text-align: center;
+margin-bottom: ;
+color: ;
+}
+ .resultsText{
+    font-size: ;
+    margin-bottom: ;
+    color: ;
+ }
+
+.scoresContainer{
+    text-align:center;
+}
 
 
-id="saveButton"
+.scoreTitle{
+    font-size: ;
+    margin-bottom: ;
+    color: ;
 
+}
+.scores{
+    font-size: ;
+    margin-bottom: ;
+    color: ;
+
+}
+
+.leaderboardContainer{
+    background-color: ;
+    padding: ;
+    border-radius: ;
+    box-shadow: ;
+}
+
+.leaderboardTable{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboardTable th,
+.leaderboardTable td,
+{
+    padding: px;
+    text-align: left;
+    color: ;
+}
+
+
+.leaderboardTable th{
+    background-color: ;
+}
+
+.leaderboardTable tr:nth-child(even){
+    background-color: ;
+}
+
+.leaderboardTable tr:hover{
+    background-color: ;
+}
+
+#timer{
+    font-size: ;
+    text-align: center;
+    margin-top: ;
+    color: ;
+}
+
+#timeLeft{
+    font-weight:bold;
+}

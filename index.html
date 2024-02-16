@@ -4,64 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> aStudent (Code quiz) </title>
-    <link rel ="stylesheet" href="./style.css">
+    <title> aStudent (Code quiz) </title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 
 <body>
-</header>aStudent (Code quiz) </header>
-<main>
+    </header>aStudent (Code quiz) </header>
+    <main>
 
-<!--start button  -->
-    <div id="starterContainer" div>
-    <button id="starter" >"Start Quiz!</button>  
-    </div>
+        <!--start button  -->
+        <div id="starterContainer" div>
+            <button id="starter">"Start Quiz!</button>
+        </div>
 
-    <!-- Questions -->
-    <div id= "questionsContainer" class="hide">
-<h2 id="questionsText"> </h2>
-<ul id = "choiceList"></ul>
-</div>
+        <!-- Questions -->
+        <div id="questionsContainer" class="hide">
+            <h2 id="questionsText"> </h2>
+            <ul id="choiceList"></ul>
+        </div>
 
+        <!-- Results -->
+        <div id="resultsContainer" class="hide">
+            <h2 id="resultsText"></h2>
+        </div>
 
+        <!-- scores -->
 
+        <div id="scoresContainer" class="hide">
+            <h2 Your score:> <span id="score"></span></h2>
+            <div id="scoresText"></div>
+        </div>
 
+        <!-- Initials to save score! -->
 
-    <!-- Results -->
-    <div id="resultsContainer" class="hide">
-        <h2 id="resultsText"></h2>
-</div>
+        <div id="initialsContainer">
+            <label for="initialsInput">Enter your initial:</label>
+            <input type="text" id="initialsInput">
+            <button id="saveButton">Save</button>
+        </div>
 
+        <!-- Timer -->
 
-
-    <!-- scores -->
-
-    <div id="scoresContainer" class="hide"> 
-        <h2 Your score: > <span id= "score"></span></h2> 
-        <div id="scoresText"></div>  
-</div>
-
-
-<!-- Initials to save score! -->
-
-<div id="initialsContainer" >
-    <label for="initialsInput">Enter your initial:</label>
-    <input type="text" id="initialsInput">
-    <button id="saveButton">Save</button>
-</div>
-
-<!-- Timer -->
-
-    <div id="leaderboardContainer"></div>
+        <div id="leaderboardContainer"></div>
 
     </main>
     <h2 id="timer">Timer: <span id="timeLeft"></span></h2>
-    <div class="leaderboard"></div> 
+    <div class="leaderboard"></div>
 
-        <script src="javascript.js"></script>
+    <script src="javascript.js"></script>
 
 </body>
 
 </html>
-
