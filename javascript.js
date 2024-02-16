@@ -133,7 +133,7 @@ function answerSelection(event){
     const selectedAnswer=event.target;
     const selectedAnswerIndex= Array.from(choicesList.children).indexOf(selectedAnswer);
     const currentQuestion=questions[currentQuestionIndex];
-    if (selectedAnswerIndex===currentQuestion.correctAnsweIndex){
+    if (selectedAnswerIndex===currentQuestion.correctAnswerIndex){
         resultsText.textContent = "Correct!";
         score ++;
     }else{
@@ -141,8 +141,102 @@ function answerSelection(event){
         timeLeft -=10;
     }
 
-    
+
 }
 
+resultsContainer.classList.remove("hide");
+setTimeout(()=>{
+    resultsContainer.classList.add("hide")
+currentQuestionIndex ++;
+if (currentQuestionIndex<questions.length){
+    displayQuestion();
+}else{
+    endQuiz();
+}
+},1000);
+
+
+//function to start the timer
+//keep track of timer depending on answers selected and update
+function startTimer(){
+    const timerInterval =setInterval((=>{
+        timeLeft --;
+        if (timeLeft <=0){
+            clearInterval(timerInterval);
+            endQuiz();
+        }
+    },
+}, 1000);
+}
+
+//function to finish    //stop the timer  //clear questions //show score
+function endQuiz(){
+    clearInterval(timer);
+
+    questionsContainer.classList.add("hide");
+    scoresContainer.classList.remove("hide");
+
+    //check if time has ended and if so, display a message then display user's final score
+    if (timeLeft ===0){
+        resultsText.textContent= "Time is up!";
+    }else{
+        resultsText.textContent= `You final score is ${score}`;
+     }
+    }
+
+//add event listeners
+startButton.addEventListener("click",begin);
+choicesList.addEventListener("click",answerSelection);
+saveButton.addEventListener("click", saveScore);
+
+//function to begin
+function startQuiz(){
+    startTimer();
+    displayQuestion();
+    startButton.classList.add("hide");
+    questionsContainer.classList.remove("hide");
+
+}
+//Display a question and answer choices
+function displayQuestion(){
+    resultsText.textContent=" ";
+
+    const currentQuestion=questions[currentQuestionIndex];
+    questionsText.textContent=currentQuestion.question;
+    choicesList.innerHTML=" ";
+    
+    currentQuestion.choices.forEach((choice)=>{
+        const choiceElement=document.createElement("li");
+        choiceElement.textContent=choice;
+        choicesListappendChild(choiceElement);
+    });
+}
+//Manage answers
+function answerSelection(event){
+    const selectedChoice =event.target;
+    const selectedAnswerIndex=Array.from(choicesList.children).indexOf(selectedChoice);
+    const currentQuestion=questions[currentQuestionIndex];
+
+    if (selectedAnswerIndex===currentQuestion.correctAnswerIndex){
+        resultsText.textContent="Correct!";
+        score++;
+    }else{
+        resultsText.textContent="Wrong!"; //user loses 10 seconds from timer
+        timeLeft= -10;
+}
+resultsContainer.classList.remove("hide");
+setTimeout(()=>{
+    resultsContainer.classList.add("hide");
+    currentQuestionIndex ++;
+
+    if (currentQuestionIndex<questions.length){
+        displayQuestion();
+    } else{
+        endQuiz();
+}
+}, 1000);
+}
+// }
+// )
 
 
