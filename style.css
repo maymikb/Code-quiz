@@ -51,6 +51,7 @@ body{
 }
 }
 
+
 .container{
     max-width: ;
     margin: ;
@@ -58,7 +59,6 @@ body{
     box-sizing: ;
 
 }
-
 
 
 h1{
@@ -120,7 +120,7 @@ h1{
     background-color: ;
     border-radius: ;
     cursor: pointer;
-    /* transition: ; */
+    transition: ; */
 }
 
 

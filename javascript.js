@@ -78,3 +78,53 @@ const questions=[
     }
  ]
 
+
+ //declare variables to keep track of the quiz's progess
+ //how much total time (60seconds or one minute)
+ //starting score
+let currentQuestionIndex=0;
+timeLeft=60; 
+let score= 0;
+
+
+//declare DOM 
+const startButton= document.getElementById("startButton");
+const questionsContainer= document.getElementById("questionsContainer");
+const questionsText= document.getElementById("questionsText");
+const choicesList= document.getElementById("choicesList");
+const resultsContainer= document.getElementById("resultsContainer");
+const resultsText= document.getElementById("resultsText");
+const scoresContainer= document.getElementById("scoresContainer");
+const scoresElement= document.getElementById("scoresElement");
+const initialsInput= document.getElementById("initialsInput");
+const saveButton= document.getElementById("saveButton");
+
+//Add the event listeners for buttons
+startButton.addEventListener("click", startQuiz);
+choicesList.addEventListener("click", answerSelection);
+saveButton.addEventListener("click", saveScore);
+
+//function to begin!
+function begin(){
+    startTimer();
+    displayQuestion();
+    startButton.classList.add("hide");
+    questionsContainer.classList.remove("hide");
+}
+
+//show questions //one at a time with answer selection
+function showQuestion(){
+resultsText.textContent= ";"
+}
+
+const currentQuestions= questions[currentQuestionIndex];
+questionsText.textContent=currentQuestions.question;
+choicesList.innerHTML= "";
+currentQuestions.choices.forEach((choice=>{
+    
+    const choiceElement=document.createElement("li");
+    choiceElement.textContent=choice;
+    choicesList.appendChild(choiceElement);
+})
+)
+
