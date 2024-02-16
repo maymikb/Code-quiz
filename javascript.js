@@ -1,6 +1,7 @@
+//set up multiple choice questions
 const questions=[
     {
-        question:"Quotation marks enclose ",
+        question:"Quotation marks enclose _ ",
         choices: [
             "strings",
             "objects",
@@ -8,7 +9,7 @@ const questions=[
             "arrays",
             
         ], correctAnswerIndex:0,
-    }
+    },
 
     {
         question:"What does HTML stand for?",
@@ -19,7 +20,7 @@ const questions=[
             "Hotmail Type Markup Language",
             
         ], correctAnswerIndex:1,
-    }
+    },
 
     {
         question:"An array is enclosed in _?",
@@ -30,7 +31,7 @@ const questions=[
             "quotes",
             
         ], correctAnswerIndex: 1,
-    }
+    },
 
     {
         question:"What static command prints a message to the console?",
@@ -41,7 +42,7 @@ const questions=[
             "console.preview",
             
         ], correctAnswerIndex:2,
-    }
+    },
 
     {
         question:"How do you start an HTML document?",
@@ -51,8 +52,8 @@ const questions=[
             "<!DOCTYPE html>",
             "introdution",
             
-        ], correctAnswerIndex: ,
-    }
+        ], correctAnswerIndex: 0,
+    },
 
     {
         question:"What does CSS stand for?",
@@ -63,7 +64,7 @@ const questions=[
             "code style supply",
             
         ], correctAnswerIndex:0,
-    }
+    },
 
     {
         question:"Curly braces enclose which type(s) of data?",
@@ -75,5 +76,5 @@ const questions=[
             
         ], correctAnswerIndex: 3,
     }
-]
+ ]
 
