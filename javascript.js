@@ -128,3 +128,21 @@ currentQuestions.choices.forEach((choice=>{
 })
 )
 
+//manage the answers selected
+function answerSelection(event){
+    const selectedAnswer=event.target;
+    const selectedAnswerIndex= Array.from(choicesList.children).indexOf(selectedAnswer);
+    const currentQuestion=questions[currentQuestionIndex];
+    if (selectedAnswerIndex===currentQuestion.correctAnsweIndex){
+        resultsText.textContent = "Correct!";
+        score ++;
+    }else{
+        resultsText.textContent= "Wrong!" //remove time from timer if answer is wrong
+        timeLeft -=10;
+    }
+
+    
+}
+
+
+
