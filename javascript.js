@@ -104,7 +104,7 @@ startButton.addEventListener("click", startQuiz);
 choicesList.addEventListener("click", answerSelection);
 saveButton.addEventListener("click", saveScore);
 
-//function to begin!
+//function to start quiz!
 function begin(){
     startTimer();
     displayQuestion();
@@ -159,14 +159,14 @@ if (currentQuestionIndex<questions.length){
 //function to start the timer
 //keep track of timer depending on answers selected and update
 function startTimer(){
-    const timerInterval =setInterval((=>{
+    const timerInterval =setInterval(()=>{
         timeLeft --;
         if (timeLeft <=0){
             clearInterval(timerInterval);
             endQuiz();
         }
     },
-}, 1000);
+1000);
 }
 
 //function to finish    //stop the timer  //clear questions //show score
@@ -236,7 +236,64 @@ setTimeout(()=>{
 }
 }, 1000);
 }
-// }
-// )
 
+//DOM elements
+const timerElement=document.getElementById("TimeLeft");
+const timeInterval=setInterval(()=>{
+    timeLeft--;
+
+    if (timeLeft<=0){
+        clearInterval(timerInterval);
+        endQuiz();
+    }
+},1000);
+
+var timer; //on global scope
+function startTimer(){
+    var timerElement=document.getElementById("timer");
+    timerElement.textContent=timeLeft +"s";
+
+    timer=setInterval(function(){
+        if(timeLeft <=0){
+            clearInterval(timer);
+            timerElement.textContent="Time is up!";
+        }else{
+            timeLEft--;
+            timerElement.textContent=timeLeft +"s";
+        }
+        },100)
+    }
+//Validate
+function validateAnswer(){
+    var isCorrect= false;
+
+if(isCorrect){
+}else{
+    var penalty =10; ///remove 10 seconds from timer if answer is wrong
+    timeLeft-=penalty;
+
+    if (timeLeft<=0){
+        clearInterval(timer);
+        var timerElement=document.getElementById("timer");
+        timerElement.textContent="Time is up!";
+    }
+}
+}
+//finsh up!
+function endQuiz(){
+    questionsContainer.classList.add("hide");
+    scoresContainer.classList.remove("hide");
+    scoresElement.textContent=score;
+    displayLeaderboard();
+}
+
+//saving score and initials
+function saveScore(){
+    const initials=initialsInput.calue.trim();
+    if(initials===""){
+        alert("Please enter your initials.");
+        return;
+    }
+    
+}
 
