@@ -11,23 +11,23 @@ body{
     height:100vh ;
     width: 100vw;
     z-index:-1 ;
-    background: linear-gradient(top top, );
+    background: linear-gradient(to top, #bae207,#c6d3e0);
 
 }
 
 
-.leaderboard{
-    content: ;
-    position: ;
-    bottom: ;
-    left: ;
-    height: ;
-    width: ;
-    background: ;
-    animation: ;
+.wave::before{
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left:0 ;
+    height:100% ;
+    width:200% ;
+    background:linear-gradient(to right, transparent, #004080,transparent);
+    animation:waveAnimation 4s linear infinite;
 
 }
-
+/* 
 .leaderboard::before{
     content: ;
     position: ;
@@ -38,9 +38,9 @@ body{
     background: ;
     animation: ;
 
-}
+} */
 
-@keyframes leaderboardAnimation{
+@keyframes waveAnimation{
 
 0%{
     transform:translateX(0);
@@ -50,61 +50,62 @@ body{
 }
 }
 
-
 .container{
-    max-width: ;
-    margin: ;
-    padding: ;
-    box-sizing: ;
+    max-width:600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 
 }
 
 
 h1{
-    font-size: ;
+    font-size:32px ;
     text-align: center;
-    margin: ;
-    color: ;
-    text-shadow: px px px rgba( , , , );
+    margin: 0 0 200px;
+    color: #fd0;
+    text-shadow: 2px 2px 4px rgba( 0,0,0, 0.5);
 }
 
 
 .button{
-    display: ;
-    background-color: ;
-    color: ;
-    border: ;
-    padding: px px;
-    font-size ;
+    display: inline-block;
+    background-color:#fd0 ;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
     text-align: center;
     cursor: pointer;
-    border-radius: px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(255,221,0,0.5);
 }
 
 .button:hover {
-    background-color: ;
-    box-shadow: ;
-    transform: ;
+    background-color:#ff8c1a;
+    box-shadow:0 0 10PX rgba(255,221,0,0.8);
+    transform:scale(1.05);
 }
 
 .button:active {
-    background-color: ;
-    box-shadow: ;
-    transform: ;
+    background-color: #ff8c1a;
+    box-shadow: 0 0 5px rgba (255,221,) ;
+    transform:scale(1.05) ;
 }
 
 .quizContainer{
-    background-color: ;
-    padding: ;
-    border-radius: ;
-    margin-bottom: ;
-    box-shadow: ;
+    background-color: black ;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow:0 0 10px rgba(255,221,0,0.5) ;
 }
 
 .questions{
-    font-size: px;
-    margin-bottom: ;
-    color: ;
+    font-size: 24px;
+    margin-bottom:20px ;
+    color: #fd0;
 }
 
 /* .choicesList{
