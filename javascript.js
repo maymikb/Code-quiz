@@ -329,9 +329,20 @@ function displayLeaderboard(){
     tableHeaderRow.appendChild(initialsHeader);
     tableHeaderRow.appendChild(scoreHeader);
     table.appendChild(tableHeaderRow);
-    
-    
 
+//make table rows for scores
+leaderbaorScores.forEach((score,index)=>{
+    const tableRow=document.createElement("tr");
+    const rankData=document.createElement("td");
+    rankData.textContent= index +1;
+    const initialsData=textContent=score.initials;
+    const scoreData=document.createElement("td");
+    scoreData.textContent=score.score;
+    tableRow.appendChild(rankData);
+    tableRow.appendChild(initialsData);
+    tableRow.appendChild(scoreData);
+    table.appendChild(tableRow);
+});
 }
-})
+
 
