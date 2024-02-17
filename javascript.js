@@ -294,6 +294,44 @@ function saveScore(){
         alert("Please enter your initials.");
         return;
     }
-    
+const leaderboarScore=JSON.parse(localStorage.getItem("leaderbaorScores")) || [];
+  
+//add new score, sort scores from hight to low, store in local storage and show updates
+leaderboarScore.push({score,initials});
+leaderboarScore.sort((a,b)=>b.score - a.score);
+localStorage.setItem("leaderboardScore", JSON.stringify(leaderboarScore));
+displayLeaderboard();
 }
+
+//leaderboard container element id for styling
+function displayLeaderboard(){
+    const leaderboardContainer=document.getElementById("leaderboardContainer");
+
+    //Clear it all, and get ldboard in local storage
+    leaderboardContainer.innerHTML;
+    const leaderbaorScores=JSON.parse(localStorage.getItem("leaderboardScores")) ||[];
+
+    //make a table for ldboard
+    const table= document.createElement("table");
+    table.classList.add("leaderboardTable");
+
+    //make a table for headers
+    const tableHeaderRow=document.createElement("tr");
+    const rankHeader=document.createElement.apply('th');
+    rankHeader.textContent="Rank";
+    const initialsHeader=document.createElement("th");
+    initialsHeader.textContent="Initials";
+
+    const scoreHeader=document.createElement("th");
+    scoreHeader.textContent=("Score");
+
+    tableHeaderRow.appendChild(rankHeader);
+    tableHeaderRow.appendChild(initialsHeader);
+    tableHeaderRow.appendChild(scoreHeader);
+    table.appendChild(tableHeaderRow);
+    
+    
+
+}
+})
 
