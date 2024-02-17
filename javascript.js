@@ -330,7 +330,7 @@ function displayLeaderboard(){
     tableHeaderRow.appendChild(scoreHeader);
     table.appendChild(tableHeaderRow);
 
-//make table rows for scores
+//make table rows for scores and addto ldboard
 leaderbaorScores.forEach((score,index)=>{
     const tableRow=document.createElement("tr");
     const rankData=document.createElement("td");
@@ -344,5 +344,6 @@ leaderbaorScores.forEach((score,index)=>{
     table.appendChild(tableRow);
 });
 }
+leaderboardContaine.appendChild(table);
 
 
