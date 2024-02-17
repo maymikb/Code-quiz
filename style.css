@@ -1,6 +1,6 @@
 
 body{
-    bakground-color:black;
+    background-color:black;
     overflow: hidden;
 }
 
@@ -101,40 +101,39 @@ h1{
     margin-bottom: 20px;
     box-shadow:0 0 10px rgba(255,221,0,0.5) ;
 }
-
-.questions{
+ .questions{
     font-size: 24px;
     margin-bottom:20px ;
     color: #fd0;
+} 
+
+.choicesList{
+    list-style: none;
+    padding:none ;
+    margin:0;
 }
 
-/* .choicesList{
-    list-style: ;
-    padding: ;
-    margin: ;
-} */
-
-.choicesList li{
-    margin-bottom: ;
-    padding: ;
-    background-color: ;
-    border-radius: ;
+.choicesList li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #001f3f;
+    border-radius:5px ;
     cursor: pointer;
-    transition: ; */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 
-.choicesList li: hover{
-    background-color: ;
-    box-shadow: ;
-    transform: ;
-}
+.choicesList li hover:{
+    background-color: #004080;
+    box-shadow: 0 0 10px rgba(225, 221, 0, 0.5);
+    transform:scale (1.05) ;
+} 
 
 .correctAnswer{
-    /* background-color: ; */
-    /* box-shadow: ; */
-    transform: ;
-}
+    background-color:#004080 ;
+    box-shadow: 0 0 10px rgba(0,204,0,0.5);
+    transform: scale(1.05);
+} 
 
 .hide{
     display:none;
@@ -142,13 +141,11 @@ h1{
 
 .resultsContainer{
 text-align: center;
-margin-bottom: ;
-color: ;
+margin-bottom: 20px;
 }
  .resultsText{
-    font-size: ;
-    margin-bottom: ;
-    color: ;
+    font-size: 18px;
+    margin-bottom: 20px;
  }
 
 .scoresContainer{
@@ -157,23 +154,22 @@ color: ;
 
 
 .scoreTitle{
-    font-size: ;
-    margin-bottom: ;
-    color: ;
-
+    font-size:24px ;
+    margin-bottom:10px ;
+    color:#fd0 ;
 }
 .scores{
-    font-size: ;
-    margin-bottom: ;
-    color: ;
+    font-size: 48px;
+    margin-bottom:20;
+    color: #fd0;
 
 }
 
 .leaderboardContainer{
-    background-color: ;
-    padding: ;
-    border-radius: ;
-    box-shadow: ;
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,221,0,0.5);
 }
 
 .leaderboardTable{
@@ -182,31 +178,30 @@ color: ;
 }
 
 .leaderboardTable th,
-.leaderboardTable td,
+.leaderboardTable td
 {
-    padding: px;
+    padding: 10px;
     text-align: left;
-    color: ;
 }
 
 
 .leaderboardTable th{
-    background-color: ;
+    background-color:#001f3f;
 }
 
 .leaderboardTable tr:nth-child(even){
-    background-color: ;
+    background-color:#001f3f;
 }
 
 .leaderboardTable tr:hover{
-    background-color: ;
+    background-color: #0073b3;
 }
 
 #timer{
-    font-size: ;
+    font-size:24px;
     text-align: center;
-    margin-top: ;
-    color: ;
+    margin-top:20px ;
+    color: #fd0;
 }
 
 #timeLeft{
