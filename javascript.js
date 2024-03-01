@@ -97,12 +97,9 @@ const resultsText= document.getElementById("resultsText");
 const scoresContainer= document.getElementById("scoresContainer");
 const scoresElement= document.getElementById("scoresElement");
 const initialsInput= document.getElementById("initialsInput");
-const saveButton= document.getElementById("saveButton");
+const initialsContainer= document.getElementById("initialsContainer");
 
-//Add the event listeners for buttons
-startButton.addEventListener("click", startQuiz);
-choicesList.addEventListener("click", answerSelection);
-saveButton.addEventListener("click", saveScore);
+const saveButton= document.getElementById("saveButton");
 
 //function to start quiz!
 function begin(){
@@ -188,14 +185,6 @@ startButton.addEventListener("click",begin);
 choicesList.addEventListener("click",answerSelection);
 saveButton.addEventListener("click", saveScore);
 
-//function to begin
-function startQuiz(){
-    startTimer();
-    displayQuestion();
-    startButton.classList.add("hide");
-    questionsContainer.classList.remove("hide");
-
-}
 //Display a question and answer choices
 function displayQuestion(){
     resultsText.textContent=" ";
@@ -207,7 +196,7 @@ function displayQuestion(){
     currentQuestion.choices.forEach((choice)=>{
         const choiceElement=document.createElement("li");
         choiceElement.textContent=choice;
-        choicesListappendChild(choiceElement);
+        choicesList.appendChild(choiceElement);
     });
 }
 //Manage answers
@@ -239,18 +228,6 @@ setTimeout(()=>{
 //DOM elements
 const timerElement=document.getElementById("TimeLeft");
 
-function startTimer(){
-const timerInterval=setInterval(()=>{
-    timeLeft--;
-
-    timer.Element.textContent=timeLeft;
-
-    if (timeLeft<=0){
-        clearInterval(timerInterval);
-        endQuiz();
-    }
-},1000);
-}
 
 var timer; //on global scope
 function startTimer(){
@@ -287,8 +264,9 @@ if(isCorrect){
 function endQuiz(){
     questionsContainer.classList.add("hide");
     scoresContainer.classList.remove("hide");
+    initialsContainer.classList.remove("hide");
+
     scoresElement.textContent=score;
-    displayLeaderboard();
 }
 
 //saving score and initials
@@ -298,9 +276,9 @@ function saveScore(){
         alert("Please enter your initials.");
         return;
     }
-const leaderboarScore=JSON.parse(localStorage.getItem("leaderbaorScores")) || [];
+const leaderboarScore=JSON.parse(localStorage.getItem("leaderboardScore")) || [];
   
-//add new score, sort scores from hight to low, store in local storage and show updates
+//add new score, sort scores from high to low, store in local storage and show updates
 leaderboarScore.push({score,initials});
 leaderboarScore.sort((a,b)=>b.score - a.score);
 localStorage.setItem("leaderboardScore", JSON.stringify(leaderboarScore));
@@ -313,7 +291,7 @@ function displayLeaderboard(){
 
     //Clear it all, and get ldboard in local storage
     leaderboardContainer.innerHTML;
-    const leaderbaorScores=JSON.parse(localStorage.getItem("leaderboardScores")) ||[];
+    const leaderbaorScores=JSON.parse(localStorage.getItem("leaderboardScore")) ||[];
 
     //make a table for ldboard
     const table= document.createElement("table");
@@ -321,7 +299,7 @@ function displayLeaderboard(){
 
     //make a table for headers
     const tableHeaderRow=document.createElement("tr");
-    const rankHeader=document.createElement.apply('th');
+    const rankHeader=document.createElement('th');
     rankHeader.textContent="Rank";
     const initialsHeader=document.createElement("th");
     initialsHeader.textContent="Initials";
@@ -351,7 +329,8 @@ leaderbaorScores.forEach((score,index)=>{
     tableRow.appendChild(scoreData);
     table.appendChild(tableRow);
 });
-}
 leaderboardContainer.appendChild(table);
+}
+
 
 
