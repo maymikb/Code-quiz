@@ -114,19 +114,18 @@ function begin(){
 
 //show questions //one at a time with answer selection
 function showQuestion(){
-resultsText.textContent= ";"
+resultsText.textContent= " ";
 }
 
 const currentQuestions= questions[currentQuestionIndex];
 questionsText.textContent=currentQuestions.question;
-choicesList.innerHTML= "";
-currentQuestions.choices.forEach((choice=>{
+choicesList.innerHTML= " ";
+currentQuestions.choices.forEach((choice)=>{
     
     const choiceElement=document.createElement("li");
     choiceElement.textContent=choice;
     choicesList.appendChild(choiceElement);
 })
-)
 
 //manage the answers selected
 function answerSelection(event){
@@ -239,14 +238,19 @@ setTimeout(()=>{
 
 //DOM elements
 const timerElement=document.getElementById("TimeLeft");
-const timeInterval=setInterval(()=>{
+
+function startTimer(){
+const timerInterval=setInterval(()=>{
     timeLeft--;
+
+    timer.Element.textContent=timeLeft;
 
     if (timeLeft<=0){
         clearInterval(timerInterval);
         endQuiz();
     }
 },1000);
+}
 
 var timer; //on global scope
 function startTimer(){
@@ -258,10 +262,10 @@ function startTimer(){
             clearInterval(timer);
             timerElement.textContent="Time is up!";
         }else{
-            timeLEft--;
+            timeLeft--;
             timerElement.textContent=timeLeft +"s";
         }
-        },100)
+        },1000)
     }
 //Validate
 function validateAnswer(){
@@ -289,7 +293,7 @@ function endQuiz(){
 
 //saving score and initials
 function saveScore(){
-    const initials=initialsInput.calue.trim();
+    const initials=initialsInput.value.trim();
     if(initials===""){
         alert("Please enter your initials.");
         return;
@@ -335,15 +339,19 @@ leaderbaorScores.forEach((score,index)=>{
     const tableRow=document.createElement("tr");
     const rankData=document.createElement("td");
     rankData.textContent= index +1;
-    const initialsData=textContent=score.initials;
+    
+    const initialsData=document.createElement("td");
+    initialsData.textContent=score.initials;
+
     const scoreData=document.createElement("td");
     scoreData.textContent=score.score;
+
     tableRow.appendChild(rankData);
     tableRow.appendChild(initialsData);
     tableRow.appendChild(scoreData);
     table.appendChild(tableRow);
 });
 }
-leaderboardContaine.appendChild(table);
+leaderboardContainer.appendChild(table);
 
 
