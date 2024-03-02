@@ -7,7 +7,8 @@ By Maymi Sarr
 ## Table of contents
 - [Purpose](#purpose)
 - [Description](#description)
-- [Screenshot](#screenshot)
+- [Html page screenshot](#screenshot)
+- [Github page screenshot](#screenshot)
 - [Link](#link)
 
 
@@ -19,6 +20,15 @@ The reason for making this app is to help students with coding assessment, espec
 This app will run through the browser displaying a timed coding quiz styled using CSS. The clean, polished, and responsive user interface will provide a platform for the user to go through multiple choice questions.When the user starts the quiz, a timer is started along with it, and when questions are answered correctly,they are presented with another one, otherwise time is taken deducted. Users can save their score and initials once the quiz ends either because all of the questions were answered or because the timer ran out first.
 
 
+## Html page screenshot
+![](htmlPage.png)
+
+## Github page screenshot
+![](githubPage.png)
+
+
 
 ## Link
+https://maymikb.github.io/aStudent/
+
 
